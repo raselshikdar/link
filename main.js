@@ -1,22 +1,23 @@
-const shareButtons = document.querySelectorAll('.share,.share-button')
-console.log(shareButtons)
+var loader = document.getElementById("preloader");
+
+window.addEventListener("load", function() {
+  loader.style.display = "none";
+})
+
+const copyBtn = document.querySelectorAll('.copy');
 
 async function copyText(e) {
-
-//prevent button going to the site
-
     e.preventDefault()
-    const link = this.getAttribute('link')
-    console.log(link)
+    let link = this.getAttribute('link')
+    console.log(`The link: "${link}"`)    
     try {
         await navigator.clipboard.writeText(link)
-        alert("Copied the link")
+        alert("Link copied to clipboard")
     } catch (err) {
-        console.error(err)
+        console.error(err)    
     }
 }
 
-shareButtons.forEach(shareButton =>
-    shareButton.addEventListener('click', copyText))
-
-  
+copyBtn.forEach(copyBtn =>
+    copyBtn.addEventListener('click', copyText))
+    

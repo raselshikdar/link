@@ -1,53 +1,89 @@
-:root {
-    --bg: rgb(0,8,20); /* Background */
-    --text: rgb(255,195,0); /* Yellow */
-    --bgshare: rgb(0,29,61); /* Share Button Background */
-    --icon: rgb(255,214,10); /* Icon Color */
-}
-
 body {
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: var(--bg);
-    width: 100vw;
-    color: #fff;
-    font-family: 'Righteous', cursive;
+  background: linear-gradient(90deg, hsla(213, 77%, 14%, 1) 0%, hsla(201, 27%, 31%, 1) 100%);
+  color: #fff;
 }
 
-a {
-    text-decoration: none;
+#preloader {
+  background: var(--bg) url(loader.gif) no-repeat center center;
+  background-size: 30%;
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  z-index: 100;
 }
-
-/* Header */
 
 header {
-    width: 95%;
-    max-width: 788px;
-    padding: 14px;
-    margin-top: 18px;
-    display: flex;
-    justify-content: flex-end;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-/* Share Button */
-
-.share-button {
-    width: 40px;
-    height: 40px;
-    border-radius: 20px;
-    background-color: var(--bgshare);
+header a {
+  text-decoration: none;
 }
 
-.share-button svg {
-    margin-left: 12px;
-    margin-top: 10px;
-    color: var(--icon);
+.sourceCode {
+  position: relative;
+  font-family: Raleway;
+  font-weight: 500;
+  font-size: 15px;
+  letter-spacing: 0.05em;
+  border-radius: 0.8em;
+  cursor: pointer;
+  border: none;
+  background: linear-gradient(to right, #8e2de2, #4a00e0);
+  color: rgb(255,255,255);
+  overflow: hidden;
 }
 
-/* Container */
+.sourceCode svg {
+  width: 1.2em;
+  height: 1.2em;
+  margin-right: 0.5em;
+}
+
+.sourceCode span {
+  position: relative;
+  z-index: 10;
+  transition: color 0.4s;
+  display: inline-flex;
+  align-items: center;
+  padding: 0.8em 1.2em 0.8em 1.05em;
+}
+
+.sourceCode::before,
+.sourceCode::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.sourceCode::before {
+  content: "";
+  background: linear-gradient(90deg, hsla(209, 95%, 14%, 1) 0%, hsla(203, 95%, 30%, 1) 50%, hsla(201, 99%, 46%, 1) 100%);
+  width: 120%;
+  left: -10%;
+  transform: skew(30deg);
+  transition: transform 0.4s cubic-bezier(0.3, 1, 0.8, 1);
+}
+
+.sourceCode:hover::before {
+  transform: translate3d(100%, 0, 0);
+}
+
+.sourceCode:active {
+  transform: scale(0.95);
+}
+
+.logoName {
+  margin: 5px 5px;
+  font-family: Anta;
+  font-size: 1.5em;
+  color: rgb(255,255,255);
+}
 
 .container {
     width: 90%;
@@ -55,38 +91,32 @@ header {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 10px;
+    margin: 0 auto;
 }
-
-/* Logo */
 
 .logocontainer {
     position: relative;
     width: 150px;
     height: 150px;
+    background: linear-gradient(90deg, hsla(213, 77%, 14%, 1) 0%, hsla(201, 27%, 31%, 1) 100%);
     border-radius: 50%;
-    background: var(--bg);
     overflow: hidden;
 }
 
 .logocontainer::before {
     content: '';
     position: absolute;
-    inset: -5px 25px;
+     inset: -10px 0px;
     background: linear-gradient(315deg,#0ef,#d400d4,#ff0a00,#a400ff);
     transition: 0.5s;
     animation: animate 2.5s linear infinite;
-}
-
-.logocontainer:hover::before {
-    inset: -10px 0px;
 }
 
 @keyframes animate {
     0% {
         transform: rotate(0deg);
     }
-    
+
     100% {
         transform: rotate(360deg);
     }
@@ -95,8 +125,8 @@ header {
 .logocontainer::after {
     content: '';
     position: absolute;
+    background: linear-gradient(90deg, hsla(213, 77%, 14%, 1) 0%, hsla(201, 27%, 31%, 1) 100%);
     inset: 3px;
-    background: #070a1c;
     border-radius: 50%;
     z-index: 1;
 }
@@ -104,7 +134,7 @@ header {
 .logo {
     position: absolute;
     inset: 15px;
-    border: 1.5px solid #070a1c;
+    border: 1.5px solid rgb(0, 27, 41);
     z-index: 3;
     border-radius: 50%;
     overflow: hidden;
@@ -126,86 +156,58 @@ header {
     z-index: 3;
 }
 
-.logocontainer:hover .logo img {
-    opacity: 0;
+.name, .about {
+  font-family: Raleway;
+  padding: 0;
+  margin: 0;
 }
 
-.logo h2 {
-    position: relative;
-    font-size: 0.75em;
-    text-align: center;
-    color: #fff;
-    font-weight: 600;
-    letter-spacing: 0.05em;
+.name {
+  margin-top: 10px;
+  margin-bottom: 5px;
 }
 
-.logo h2 span {
-    font-weight: 300;
-    font-size: 0.75em;
+.about {
+  margin-bottom: 15px;
 }
 
-.logo a {
-    position: relative;
-    margin-top: 5px;
-    padding: 5px 10px;
-    background: var(--bg);
-    color: var(--icon);
-    border-radius: 12.5px;
-    font-weight: 500;
-    font-size: 0.6em;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    text-decoration: none;
-    transition: 0.5s;
-}
-
-.logo:hover {
-    letter-spacing: 0.2em;
-}
-
-.tile {
+.tiles {
     width: 100%;
-    background-color: rgb(37,37,37);
-    margin: 7px;
-    border-radius: 17px;
-    display: flex;
-    justify-content: space-between;
+    background: linear-gradient(0deg, hsla(209, 87%, 9%, 1) 0%, hsla(201, 96%, 19%, 1) 100%);
+    border-radius: 18px;
     color: #fff;
+    font-family: Anta;
+    margin: 10px;
+    cursor: pointer;
+    box-shadow: 2px 2px 0 #023E5E;
 }
 
-.tile:hover {
-    transition: cubic-bezier(.07, 1.41, .82, 1.41) 0.2s;
-    transform: scale(1.02);
-}
+.link {
+  text-decoration: none;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 
-.share {
-    margin: 8px;
-    width: 40px;
-    height: 40px;
-    border-radius: 20px;
-    background-color: var(--bgshare);
-    color: #fff;
-}
-
-.share svg {
-    margin-left: 12px;
-    margin-top: 10px;
 }
 
 .icon {
-    margin: 4px 8px;
-    width: 44px;
-    height: 44px;
-    color: #fff;
+  display: flex;
+  justify-content: flex-start;
+  font-size: 2em;
+  padding-left: 15px;
 }
 
-/* Footer */
+.social {
+  font-size: 1.2em;
+  display: flex;
+  justify-content: center;
+  font-weight: bold;
+}
 
-.credit a {
-    color: #fff;
-    text-decoration: none;
-  }
-
-.credit:hover {
-    color: #0ef;
+.copy {
+  display: flex;
+  justify-content: flex-end;
+  font-size: 2em;
+  padding-right: 15px;
 }
