@@ -182,13 +182,16 @@ header a {
     box-shadow: 2px 2px 0 #023E5E;
 }
 
+.tiles:hover {
+  font-size: 1.1em;
+} 
+
 .link {
   text-decoration: none;
   color: #fff;
   display: flex;
   justify-content: space-between;
   align-items: center;
-
 }
 
 .icon {
