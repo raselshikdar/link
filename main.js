@@ -21,3 +21,5 @@ async function copyText(e) {
 copyBtn.forEach(copyBtn =>
     copyBtn.addEventListener('click', copyText))
     
+const year = document.getElementById("year");
+year.textContent = new Date().getFullYear();
