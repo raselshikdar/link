@@ -4,20 +4,14 @@
 
 </div>
 
-## Description
-This repository contains the source code of a simple and elegant link tree website, created using HTML, CSS and JavaScript. 
-> This repository, entirely written using an Android device.
+---
+
+## ✨ About
+This repository hosts the source code for a minimalist and stylish link tree website, built with HTML, CSS, and JavaScript.
+> 👀 This website was created entirely using an Android device.
 
 ---
 
-## Linktree 
-
-<div align="center">
- <img src="sample.png" width="100%">
- <img alt="GitHub" src="https://img.shields.io/github/license/RhythmusByte/LinkTree?color=black&logo=github&style=for-the-badge">
-</div>
-
-## Contribution
-Contributions to the repository are welcome! If you have any suggestions, improvements, or bug fixes, feel free to open an issue or submit a pull request. I appreciate any feedback and help in making my personal website better.
-
-> If you appreciate this repository, please consider giving it a star to show your support.
+## 🌐 Contribution
+Contributions to the repository are welcome! If you have any suggestions, improvements, or bug fixes, feel free to open an issue or submit a pull request. I welcome any feedback or assistance to improve my personal link tree website.
+> 🌟 If you appreciate this repo, show some love with a star!
