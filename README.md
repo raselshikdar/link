@@ -8,7 +8,7 @@
 
 ## ✨ About
 This repository hosts the source code for a minimalist and stylish link tree website, built with HTML, CSS, and JavaScript.
-> 👀 This website was created entirely using an Android device.
+> 📌 This website was created entirely using an Android device.
 
 ---
 
